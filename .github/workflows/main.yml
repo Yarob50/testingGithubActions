@@ -1,0 +1,18 @@
+name: Say Hello World
+
+on: [push]
+
+jobs:
+  hello_world_job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hello world step
+        id: hello
+        uses: Yarob50/testingGithubActions
+        with:
+          who-to-greet: 'yaroooob'
+        # show the output step
+      - name: get the output and show it step
+        run: echo "The time is {{ $steps.hello.outputs.time }}"
