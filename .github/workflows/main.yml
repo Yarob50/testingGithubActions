@@ -17,4 +17,4 @@ jobs:
           who-to-greet: 'yaroooob haitham :)'
         # show the output step
       - name: get the output and show it step
-        run: echo "The time is {{ $steps.hello.outputs.time }}"
+        run: echo "The time is ${{ steps.hello.outputs.time }}"
