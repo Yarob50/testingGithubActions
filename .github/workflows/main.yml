@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: hello world step
         id: hello
-        uses: ./
+        uses: /
         with:
           who-to-greet: 'yaroooob'
         # show the output step
