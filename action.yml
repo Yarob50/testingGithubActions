@@ -1,0 +1,15 @@
+name: 'My Custome Hello World :)'
+description: 'Hello world action to practice actions'
+inputs:
+  who-to-greet: #someone to great
+    description: 'The one to be greeted!'
+    required: true
+    default: 'Yarob'
+
+outputs:
+  time: #the time of the great
+    description: 'The time I greeted you'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
