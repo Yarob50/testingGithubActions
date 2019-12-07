@@ -8,11 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: hello world step
         id: hello
         uses: ./
         with:
-          who-to-greet: 'yaroooob'
+          who-to-greet: 'yaroooob haitham :)'
         # show the output step
       - name: get the output and show it step
         run: echo "The time is {{ $steps.hello.outputs.time }}"
