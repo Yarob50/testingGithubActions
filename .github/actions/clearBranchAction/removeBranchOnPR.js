@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github')
 
+
 try{
 
 	const time = (new Date).toTimeString();
@@ -19,7 +20,6 @@ try{
 
     const head = payload.pull_request.head
     //first check if the branch is merged (not only the PR is closed)
-    console.log(payload.merged)
     console.log(payload)
     if(payload.pull_request.merged == true){
       console.log("the branch is merged, start the deletion process...")
@@ -39,6 +39,18 @@ try{
       const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/"+branchName
       console.log("////The url is :////")
       console.log(referenceUrl)
+
+      //make the delete request:
+      console.log("starting the delete request...")
+      axios.delete(referenceUrl, {}, {headers})
+        .then(function(response){
+            console.log("The branch "+branchName+" has been deleted successfully")
+            console.log(response)
+        })
+        .catch(function(error){
+          console.log(error)
+        })
+
 
     }
     else{
