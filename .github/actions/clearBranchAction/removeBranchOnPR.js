@@ -37,7 +37,7 @@ try{
       //get the branch name:
       var branchName = head.ref;
       console.log("Deleting the branch: "+branchName)
-      const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/"+branchName
+      const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/heads/"+branchName
       console.log("////The url is :////")
       console.log(referenceUrl)
 
