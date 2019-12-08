@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github')
-import axios from 'axios';
+const axios = require('axios');
 
 
 try{
