@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v1
       - name: checking the pr to clear
         id: check_pr
-        uses: ./clearBranchOnPR.yml
+        uses: ./.github/actions/clearBranchAction
       - name: finishing
         run: echo "Done :)"
