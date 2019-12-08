@@ -3,4 +3,4 @@ description: 'This action is used to remove the branch when the PR is closed and
 
 runs:
   using: 'node12'
-  main: 'removBranchOnPR.js'
+  main: 'removeBranchOnPR.js'
