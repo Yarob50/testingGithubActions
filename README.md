@@ -9,5 +9,5 @@ This action is used to print hello world whenever some github event occurse
 ### `time`
 the time of the greet
 
-## Example of usage
+## Example of usage:
 uses: actions/testingGithubActions
