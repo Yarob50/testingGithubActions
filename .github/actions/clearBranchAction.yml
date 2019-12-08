@@ -1,0 +1,6 @@
+name: 'Clear branch action'
+description: 'This action is used to remove the branch when the PR is closed and the branch is merged'
+
+runs:
+  using: 'node12'
+  main: 'removBranchOnPR.js'
