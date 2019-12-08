@@ -1,0 +1,6 @@
+name: "Clear Branch ON Pull Request Action"
+description: "Used to remove the branch after a successful merge with master"
+
+runs:
+  using: "node12"
+  main: "removeBranchOnPR.js"
