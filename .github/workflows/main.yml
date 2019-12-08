@@ -1,6 +1,6 @@
 name: Say Hello World
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   hello_world_job:
