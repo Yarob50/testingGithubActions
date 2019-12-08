@@ -13,6 +13,10 @@ try{
   	console.log("The json pay load is:");
   	console.log(jsonPayload)
   	console.log("//////////////////////////////////")
+    console.log(github);
+    console.log("//////////////////////////////////")
+    console.log(github.context);
+    console.log("//////////////////////////////////")
 
 }catch (error){
 	core.setFailed(error.message)
