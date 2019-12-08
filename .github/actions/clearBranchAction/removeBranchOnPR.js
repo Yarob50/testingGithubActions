@@ -19,6 +19,7 @@ try{
 
     const head = payload.head
     //first check if the branch is merged (not only the PR is closed)
+    console.log(payload.merged)
     if(payload.merged == true){
       console.log("the branch is merged, start the deletion process...")
       var baseUrl = "https://api.github.com";
