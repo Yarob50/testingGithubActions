@@ -43,7 +43,7 @@ try{
 
       //make the delete request:
       console.log("starting the delete request...")
-      const url = baseUrl+"/user/repos"
+      const url = baseUrl+"/Yarob50/repos"
       console.log("the new url is: "+url);
       axios.get(url, {headers})
         .then(function(response){
