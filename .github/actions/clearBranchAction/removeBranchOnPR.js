@@ -19,6 +19,8 @@ try{
    //  console.log(payload);
    //  console.log("//////////////////////////////////")
 
+    //get the access token input from the workflow:
+    const token = core.getInput('access_token');
     const head = payload.pull_request.head
     //first check if the branch is merged (not only the PR is closed)
     //console.log(payload)
@@ -27,7 +29,7 @@ try{
       var baseUrl = "https://api.github.com";
       const headers = {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': 'token c46e275724b3f35eeee405558bcf2c32ebf6b75d'
+                    'Authorization': 'token '+token
       }
       //get the owner
       var owner = head.repo.owner.login
