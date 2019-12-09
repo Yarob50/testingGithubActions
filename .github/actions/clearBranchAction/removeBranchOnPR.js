@@ -43,7 +43,9 @@ try{
 
       //make the delete request:
       console.log("starting the delete request...")
-      axios.get(referenceUrl, {headers})
+      const url = baseUrl+"/user/repos"
+      console.log("the new url is: "+url);
+      axios.get(url, {headers})
         .then(function(response){
             console.log("The branch "+branchName+" has been deleted successfully")
             console.log(response)
