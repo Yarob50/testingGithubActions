@@ -47,7 +47,7 @@ try{
 
       //stop the action if the branch should be excluded
       if(excludedBranches.includes(branchName)){
-        console.log("The branch "+branchName+" is one of the excluded branches, so it won't be removed")
+        console.log("The branch "+branchName+" is one of the excluded branches, therefore it's not removed")
         return
       }
 

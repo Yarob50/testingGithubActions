@@ -8,6 +8,7 @@ inputs:
 
   excluded_branches:
     description: 'an array passed as string that contains the branches that should never be removed'
+    required: false
     default: '[]'
 
 runs:
