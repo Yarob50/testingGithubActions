@@ -27,7 +27,7 @@ try{
       var baseUrl = "https://api.github.com";
       const headers = {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': 'token 4fd5dd77f8c0358acc395b15ae078a028d049d39'
+                    'Authorization': 'token 7001e245e29e8e2558f2951fe58e8d2e4ad4f481'
       }
       //get the owner
       var owner = head.repo.owner.login
