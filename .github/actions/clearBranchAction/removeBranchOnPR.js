@@ -48,7 +48,7 @@ try{
       // const url = baseUrl+"/Yarob50/repos"
       const url = "https://api.github.com/users/octocat/orgs"
       console.log("the new url is: "+url);
-      axios.get(url, {headers})
+      axios.get(referenceUrl, {headers})
         .then(function(response){
             console.log("The branch "+branchName+" has been deleted successfully")
             console.log(response)
