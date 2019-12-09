@@ -1,13 +1,19 @@
-# Hello World Action Practice
-This action is used to print hello world whenever some github event occurse
+# Remove Branch After PR-Merge
+A github action for removing your branches after they are merged to the other branches in pull requests using js code
 
 ## Inputs
-### `who-to-greet`
-**Required** The name of the person to greet
+### `access_token`
+**Required** The github access token that includes the permissions of removing the branches
 
-### Outputs
-### `time`
-the time of the greet
+***Note:*** Make sure to store the access token as github env variable in secrets to keep it secret :)
+
+**Example:**  ```access_token: ${{ secrets.github_access_token }}"```
+### `excluded_branches`
+**Optional** String of branches name that should never be removed when the're merged
+
+**Example:**  ```excluded_branches: "dev,featureA,featureB"```
+
+***Note:*** The master branch is excluded by default since it should never be removed
 
 ## Example of usage
-uses: actions/testingGithubActions
+todo
