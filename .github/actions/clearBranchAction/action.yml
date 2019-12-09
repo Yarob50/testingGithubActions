@@ -6,6 +6,10 @@ inputs:
     description: 'The access token for the api requests'
     required: true
 
+  excluded_branches:
+    description: 'an array passed as string that contains the branches that should never be removed'
+    default: '[]'
+
 runs:
   using: 'node12'
   main: 'removeBranchOnPR.js'

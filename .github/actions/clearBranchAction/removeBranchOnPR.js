@@ -19,9 +19,14 @@ try{
    //  console.log(payload);
    //  console.log("//////////////////////////////////")
 
-    //get the access token input from the workflow:
+    //get the inputs
     const token = core.getInput('access_token');
+    const excludedBranchesString = core.getInput('excluded_branches');
+    const excludedBranches = excludedBranches.split(",")//parse the array inside the string to be an array
+    console.log("The excluded branches are: ")
+    console.log(excludedBranches)
     const head = payload.pull_request.head
+
     //first check if the branch is merged (not only the PR is closed)
     //console.log(payload)
     if(payload.pull_request.merged == true){
@@ -38,30 +43,39 @@ try{
       console.log("The repo is "+repo)
       //get the branch name:
       var branchName = head.ref;
-      console.log("Deleting the branch: "+branchName)
+      console.log("The target branch is: "+branchName)
+
+      //stop the action if the branch should be excluded
+      if(excludedBranches.includes(branchName)){
+        console.log("The branch "+branchName+" is one of the excluded branches, so it won't be removed")
+        return
+      }
+
+      //stop the action if the branch is the master branch
+      if(branchName=="master"){
+        console.log("The master branch should never be removed, deletion stopped")
+      }
+
+      //make the delete request:
+      console.log("starting the delete request....")
       const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/heads/"+branchName
       console.log("////The url is :////")
       console.log(referenceUrl)
 
-      //make the delete request:
-      console.log("starting the delete request....")
-      // const url = baseUrl+"/Yarob50/repos"
-      const url = "https://api.github.com/users/octocat/orgs"
-      console.log("the new url is: "+url);
       axios.delete(referenceUrl, {headers})
         .then(function(response){
             console.log("The branch "+branchName+" has been deleted successfully")
             console.log(response)
         })
         .catch(function(error){
-          console.log("///////////////////////\n\n\nThe error is: ")
+          console.log("\n\n\n///////////////////////Error: ")
           console.log(error)
         })
 
 
     }
     else{
-      console.log("The Branch is not merged, so the branch hasn't been removed")
+      console.log("Pull request closed without merge, therefore the branch hasn't been removed")
     }
 
 }catch (error){

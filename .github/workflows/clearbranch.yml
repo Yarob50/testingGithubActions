@@ -16,6 +16,7 @@ jobs:
         uses: ./.github/actions/clearBranchAction
         with: 
           access_token: ${{ secrets.github_access_token }} 
+          excluded_branches: "fw,fr,fn"
 
       - name: finishing
         run: echo "Done :)"
