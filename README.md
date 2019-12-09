@@ -11,7 +11,7 @@ A github action for removing your branches after they are merged to the other br
 ### `excluded_branches`
 **Optional** String of branches name that should never be removed when the're merged
 
-**Example:**  ```excluded_branches: "dev,featureA,featureB"```
+**Example:**  ```vcexcluded_branches: "dev,featureA,featureB"```
 
 ***Note:*** The master branch is excluded by default since it should never be removed
 
