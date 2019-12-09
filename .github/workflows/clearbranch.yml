@@ -9,9 +9,7 @@ jobs:
   clear_branch_job:
     runs-on: [ubuntu-latest]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: checking the pr to clear
+      - name: clearing the branch
         id: check_pr
         uses: Yarob50/Clear-PR-Branch@master
         with: 
