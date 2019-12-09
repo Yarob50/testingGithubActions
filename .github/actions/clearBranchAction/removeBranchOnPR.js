@@ -21,7 +21,7 @@ try{
 
     const head = payload.pull_request.head
     //first check if the branch is merged (not only the PR is closed)
-    console.log(payload)
+    //console.log(payload)
     if(payload.pull_request.merged == true){
       console.log("the branch is merged, start the deletion process...")
       var baseUrl = "https://api.github.com";
@@ -37,7 +37,7 @@ try{
       //get the branch name:
       var branchName = head.ref;
       console.log("Deleting the branch: "+branchName)
-      const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/heads/"+branchName
+      const referenceUrl = baseUrl+"/repos/"+owner+"/"+repo+"/git/refs/"+branchName
       console.log("////The url is :////")
       console.log(referenceUrl)
 
@@ -49,6 +49,7 @@ try{
             console.log(response)
         })
         .catch(function(error){
+          console.log("///////////////////////\n\n\nThe error is: ")
           console.log(error)
         })
 
