@@ -14,7 +14,4 @@ jobs:
         uses: Yarob50/Clear-PR-Branch@master
         with: 
           access_token: ${{ secrets.github_access_token }} 
-          excluded_branches: ""
-
-      - name: finishing
-        run: echo "Done :)"
+          excluded_branches: "[dev,featureX]"
