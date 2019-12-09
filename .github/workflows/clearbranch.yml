@@ -14,5 +14,8 @@ jobs:
       - name: checking the pr to clear
         id: check_pr
         uses: ./.github/actions/clearBranchAction
+        with: 
+          access_token: ${{ secrets.github_access_token }} 
+
       - name: finishing
         run: echo "Done :)"

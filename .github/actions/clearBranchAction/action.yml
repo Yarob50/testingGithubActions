@@ -1,6 +1,11 @@
 name: 'Clear branch action'
 description: 'This action is used to remove the branch when the PR is closed and the branch is merged'
 
+inputs:
+  access_token:
+    description: 'The access token for the api requests'
+    required: true
+
 runs:
   using: 'node12'
   main: 'removeBranchOnPR.js'
