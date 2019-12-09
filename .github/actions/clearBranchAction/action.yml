@@ -3,7 +3,7 @@ description: 'This action is used to remove the branch when the PR is closed and
 
 inputs:
   access_token:
-    description: 'The access token for the api requests'
+    description: 'The access token  for the api requests'
     required: true
 
   excluded_branches:
