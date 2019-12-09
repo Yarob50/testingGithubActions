@@ -22,7 +22,7 @@ try{
     //get the inputs
     const token = core.getInput('access_token');
     const excludedBranchesString = core.getInput('excluded_branches');
-    const excludedBranches = excludedBranches.split(",")//parse the array inside the string to be an array
+    const excludedBranches = excludedBranchesString.split(",")//parse the array inside the string to be an array
     console.log("The excluded branches are: ")
     console.log(excludedBranches)
     const head = payload.pull_request.head
